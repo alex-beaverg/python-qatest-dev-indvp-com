@@ -1,4 +1,0 @@
-# All installed plug-ins put into file:
-#   pip freeze > requirements.txt
-# Install all pug-ins from file:
-#   pip install -r requirements.txt

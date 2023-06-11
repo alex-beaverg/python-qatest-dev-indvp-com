@@ -1,0 +1,20 @@
+All installed plug-ins put into file:
+    pip freeze > requirements.txt
+Install all pug-ins from file:
+    pip install -r requirements.txt
+
+Run all tests:
+    with chrome browser:
+        pytest
+        pytest --browser=chrome
+    with firefox browser:
+        pytest --browser=firefox
+    with edge browser:
+        pytest --browser=edge
+
+Run all tests with marker:
+    pytest -m guest_tests
+
+Run HomePage Tests:
+    pytest test_HomePage.py
+
