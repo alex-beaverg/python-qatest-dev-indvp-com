@@ -99,6 +99,7 @@ class TestCaseGuestMainMenuVisibleItemsHomePage:
         result = page.has_opened("TEST PREFIX Gifts TEST PREFIX")
         assert result, "'Gifts' page didn't open!"
 
+    @pytest.mark.xfail(reason="First click to 'Sale Room' 'Main Menu' item doesn't work")
     @allure.step("Opening 'Sale Room' page from 'Home' page with main menu")
     def test_guest_open_sale_room_page_from_home_page_with_main_menu(self, driver, link: str) -> None:
         """Test method. Guest can open 'Sale Room' page from 'Home' page with main menu"""

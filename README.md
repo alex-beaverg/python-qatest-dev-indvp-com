@@ -3,4 +3,11 @@
 1. Python
 2. PyTest
 3. Selenium Webdriver
-4. ...
+4. Allure
+5. ConfTest (cmd-line runs)
+6. Page Object
+7. Page Element
+8. Base Page
+9. Custom markers' container
+10. Requirements
+11. Locators' container
