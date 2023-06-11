@@ -1,3 +1,6 @@
+Cmd-line commands
+=================
+
 All installed plug-ins put into file:
     pip freeze > requirements.txt
 Install all pug-ins from file:
@@ -12,14 +15,15 @@ Run all tests:
     with edge browser:
         pytest --browser=edge
 
-Run all tests with marker:
+Run all tests with markers:
     pytest -m guest_tests
+    pytest -m main_menu_visible_items_tests
 
 Run all tests with allure reporting:
     pytest --alluredir test-allure-reports
 Show allure report:
     allure serve test-allure-reports
 
-Run HomePage Tests:
+Run ----Page Tests:
     pytest test_HomePage.py
 
