@@ -1,3 +1,4 @@
+import allure
 import pytest
 from selenium import webdriver
 
@@ -9,6 +10,7 @@ def pytest_addoption(parser):
 
 @pytest.fixture(scope="function")
 def driver(request):
+    setup_report()
     browser = request.config.getoption("browser")
     driver = None
     if browser == "chrome":
@@ -21,4 +23,15 @@ def driver(request):
         raise pytest.UsageError("--browser_name should be chrome or firefox")
     driver.maximize_window()
     yield driver
+    teardown_report()
     driver.quit()
+
+
+@allure.step('Getting webdriver')
+def setup_report():
+    pass
+
+
+@allure.step('Closing webdriver')
+def teardown_report():
+    pass

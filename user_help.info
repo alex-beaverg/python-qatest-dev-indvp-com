@@ -15,6 +15,11 @@ Run all tests:
 Run all tests with marker:
     pytest -m guest_tests
 
+Run all tests with allure reporting:
+    pytest --alluredir test-allure-reports
+Show allure report:
+    allure serve test-allure-reports
+
 Run HomePage Tests:
     pytest test_HomePage.py
 
