@@ -27,6 +27,9 @@ Run all tests with allure reporting:
 Show allure report:
     allure serve test-allure-reports
 
+Rerun failed tests:
+    pytest --reruns 1
+
 Run tests in file:
     pytest test_HomePage.py
 

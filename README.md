@@ -13,3 +13,4 @@
 11. Locators' container
 12. ActionChains
 13. Screenshots for failed tests
+14. Reruns for accidentally failed tests
