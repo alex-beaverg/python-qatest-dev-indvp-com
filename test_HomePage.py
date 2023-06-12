@@ -5,10 +5,18 @@ from PageObjects.BedAndBathPage import BedAndBathPage
 from PageObjects.GardenAndOutdoorPage import GardenAndOutdoorPage
 from PageObjects.GiftsPage import GiftsPage
 from PageObjects.HomeDecorPage import HomeDecorPage
+from PageObjects.HomeDecorPages.AllHomeDecor import AllHomeDecorPage
+from PageObjects.HomeDecorPages.CandlesAndLightingPage import CandlesAndLightingPage as CandlesAndLightingPage2
+from PageObjects.HomeDecorPages.DecorativeAccessoriesPage import DecorativeAccessoriesPage
+from PageObjects.HomeDecorPages.FlowerShopPage import FlowerShopPage
+from PageObjects.HomeDecorPages.FramesAndMirrorsPage import FramesAndMirrorsPage
+from PageObjects.HomeDecorPages.FurniturePage import FurniturePage
+from PageObjects.HomeDecorPages.SoftFurnishingsPage import SoftFurnishingsPage
+from PageObjects.HomeDecorPages.VasesPage import VasesPage
 from PageObjects.HomePage import HomePage
 from PageObjects.KitchenAndDiningPage import KitchenAndDiningPage
 from PageObjects.KitchenAndDiningPages.AllKitchenAndDiningPage import AllKitchenAndDiningPage
-from PageObjects.KitchenAndDiningPages.CandlesAndLightingPage import CandlesAndLightingPage
+from PageObjects.KitchenAndDiningPages.CandlesAndLightingPage import CandlesAndLightingPage as CandlesAndLightingPage1
 from PageObjects.KitchenAndDiningPages.CutleryPage import CutleryPage
 from PageObjects.KitchenAndDiningPages.GlasswarePage import GlasswarePage
 from PageObjects.KitchenAndDiningPages.KitchenTextilesPage import KitchenTextilesPage
@@ -16,6 +24,7 @@ from PageObjects.KitchenAndDiningPages.MugsAndCupsPage import MugsAndCupsPage as
 from PageObjects.KitchenAndDiningPages.ServingPiecesPage import ServingPiecesPage
 from PageObjects.KitchenAndDiningPages.StorageAndAccessoriesPage import StorageAndAccessoriesPage
 from PageObjects.KitchenAndDiningPages.CookingAndRoastingPage import CookingAndRoastingPage as CookingAndRoastingPage2
+from PageObjects.KitchenAndDiningPages.TableLinenAndAccessoriesPage import TableLinenAndAccessoriesPage
 from PageObjects.KitchenAndDiningPages.TablewarePage import TablewarePage
 from PageObjects.PortmeirionPage import PortmeirionPage
 from PageObjects.NewInPage import NewInPage
@@ -367,7 +376,7 @@ class TestCaseGuestMainMenuKitchenAndDiningDropDownItemsHomePage:
         page = HomePage(driver, link)
         page.open()
         page.mainMenu.click_to_main_menu_kitchen_and_dining_drop_down_items("Candles And Lighting")
-        page = CandlesAndLightingPage(driver, driver.current_url)
+        page = CandlesAndLightingPage1(driver, driver.current_url)
         result = page.has_opened("TEST PREFIX Candles & Lighting TEST PREFIX")
         assert result, "'Candles And Lighting' page didn't open!"
 
@@ -379,6 +388,101 @@ class TestCaseGuestMainMenuKitchenAndDiningDropDownItemsHomePage:
         page = HomePage(driver, link)
         page.open()
         page.mainMenu.click_to_main_menu_kitchen_and_dining_drop_down_items("Table Linen And Accessories")
-        page = CandlesAndLightingPage(driver, driver.current_url)
+        page = TableLinenAndAccessoriesPage(driver, driver.current_url)
         result = page.has_opened("TEST PREFIX Table Linen & Accessories TEST PREFIX")
         assert result, "'Table Linen And Accessories' page didn't open!"
+
+
+@allure.feature("Guest can open pages from 'Home' page with 'Main Menu' 'Home Decor' drop down items")
+@pytest.mark.guest_tests
+@pytest.mark.main_menu_home_decor_drop_down_items_tests
+@pytest.mark.parametrize('link', ['https://qatest-dev.indvp.com/'])
+class TestCaseGuestMainMenuHomeDecorDropDownItemsHomePage:
+    """Test class (case). Guest can open pages from 'Home' page with 'Main Menu' 'Home Decor' drop down items"""
+
+    @allure.step("Opening 'All Home Decor' page from 'Home' page with 'Main Menu' 'Home Decor' drop down items")
+    def test_guest_open_all_home_decor_page_from_home_page_with_main_menu(self, driver, link: str) -> None:
+        """Test method. Guest can open 'All Home Decor' page from 'Home' page with 'Main Menu'
+           'Home Decor' drop down items"""
+        page = HomePage(driver, link)
+        page.open()
+        page.mainMenu.click_to_main_menu_home_decor_drop_down_items("All Home Decor")
+        page = AllHomeDecorPage(driver, driver.current_url)
+        result = page.has_opened("TEST PREFIX All Home Décor TEST PREFIX")
+        assert result, "'All Home Decor' page didn't open!"
+
+    @allure.step("Opening 'Decorative Accessories' page from 'Home' page with 'Main Menu' 'Home Decor' drop down items")
+    def test_guest_open_decorative_accessories_page_from_home_page_with_main_menu(self, driver, link: str) -> None:
+        """Test method. Guest can open 'Decorative Accessories' page from 'Home' page with 'Main Menu'
+           'Home Decor' drop down items"""
+        page = HomePage(driver, link)
+        page.open()
+        page.mainMenu.click_to_main_menu_home_decor_drop_down_items("Decorative Accessories")
+        page = DecorativeAccessoriesPage(driver, driver.current_url)
+        result = page.has_opened("TEST PREFIX Decorative accessories TEST PREFIX")
+        assert result, "'Decorative Accessories' page didn't open!"
+
+    @allure.step("Opening 'Frames And Mirrors' page from 'Home' page with 'Main Menu' 'Home Decor' drop down items")
+    def test_guest_open_frames_and_mirrors_page_from_home_page_with_main_menu(self, driver, link: str) -> None:
+        """Test method. Guest can open 'Frames And Mirrors' page from 'Home' page with 'Main Menu'
+           'Home Decor' drop down items"""
+        page = HomePage(driver, link)
+        page.open()
+        page.mainMenu.click_to_main_menu_home_decor_drop_down_items("Frames And Mirrors")
+        page = FramesAndMirrorsPage(driver, driver.current_url)
+        result = page.has_opened("TEST PREFIX Frames & Mirrors TEST PREFIX")
+        assert result, "'Frames And Mirrors' page didn't open!"
+
+    @allure.step("Opening 'Soft Furnishings' page from 'Home' page with 'Main Menu' 'Home Decor' drop down items")
+    def test_guest_open_soft_furnishings_page_from_home_page_with_main_menu(self, driver, link: str) -> None:
+        """Test method. Guest can open 'Soft Furnishings' page from 'Home' page with 'Main Menu'
+           'Home Decor' drop down items"""
+        page = HomePage(driver, link)
+        page.open()
+        page.mainMenu.click_to_main_menu_home_decor_drop_down_items("Soft Furnishings")
+        page = SoftFurnishingsPage(driver, driver.current_url)
+        result = page.has_opened("TEST PREFIX Soft Furnishings TEST PREFIX")
+        assert result, "'Soft Furnishings' page didn't open!"
+
+    @allure.step("Opening 'Flower Shop' page from 'Home' page with 'Main Menu' 'Home Decor' drop down items")
+    def test_guest_open_flower_shop_page_from_home_page_with_main_menu(self, driver, link: str) -> None:
+        """Test method. Guest can open 'Flower Shop' page from 'Home' page with 'Main Menu'
+           'Home Decor' drop down items"""
+        page = HomePage(driver, link)
+        page.open()
+        page.mainMenu.click_to_main_menu_home_decor_drop_down_items("Flower Shop")
+        page = FlowerShopPage(driver, driver.current_url)
+        result = page.has_opened("TEST PREFIX Flower Shop TEST PREFIX")
+        assert result, "'Flower Shop' page didn't open!"
+
+    @allure.step("Opening 'Candles And Lighting' page from 'Home' page with 'Main Menu' 'Home Decor' drop down items")
+    def test_guest_open_candles_and_lighting_page_from_home_page_with_main_menu(self, driver, link: str) -> None:
+        """Test method. Guest can open 'Candles And Lighting' page from 'Home' page with 'Main Menu'
+           'Home Decor' drop down items"""
+        page = HomePage(driver, link)
+        page.open()
+        page.mainMenu.click_to_main_menu_home_decor_drop_down_items("Candles And Lighting")
+        page = CandlesAndLightingPage2(driver, driver.current_url)
+        result = page.has_opened("TEST PREFIX Candles & Lighting TEST PREFIX")
+        assert result, "'Candles And Lighting' page didn't open!"
+
+    @allure.step("Opening 'Furniture' page from 'Home' page with 'Main Menu' 'Home Decor' drop down items")
+    def test_guest_open_furniture_page_from_home_page_with_main_menu(self, driver, link: str) -> None:
+        """Test method. Guest can open 'Furniture' page from 'Home' page with 'Main Menu'
+           'Home Decor' drop down items"""
+        page = HomePage(driver, link)
+        page.open()
+        page.mainMenu.click_to_main_menu_home_decor_drop_down_items("Furniture")
+        page = FurniturePage(driver, driver.current_url)
+        result = page.has_opened("TEST PREFIX Furniture TEST PREFIX")
+        assert result, "'Furniture' page didn't open!"
+
+    @allure.step("Opening 'Vases' page from 'Home' page with 'Main Menu' 'Home Decor' drop down items")
+    def test_guest_open_vases_page_from_home_page_with_main_menu(self, driver, link: str) -> None:
+        """Test method. Guest can open 'Vases' page from 'Home' page with 'Main Menu' 'Home Decor' drop down items"""
+        page = HomePage(driver, link)
+        page.open()
+        page.mainMenu.click_to_main_menu_home_decor_drop_down_items("Vases")
+        page = VasesPage(driver, driver.current_url)
+        result = page.has_opened("TEST PREFIX Vases TEST PREFIX")
+        assert result, "'Vases' page didn't open!"

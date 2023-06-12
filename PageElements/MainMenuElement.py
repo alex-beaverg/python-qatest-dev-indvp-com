@@ -91,3 +91,28 @@ class MainMenu:
                 ActionChains(self.driver).move_to_element(parent_elem).move_by_offset(0, y + 10 * d).click().perform()
             case _:
                 raise RuntimeError("No such 'Main Menu' 'Kitchen And Dining' drop down items item")
+
+    def click_to_main_menu_home_decor_drop_down_items(self, menu_item: str) -> None:
+        """Method to click to 'Main Menu' 'Home Decor' drop down items"""
+        parent_elem = self.driver.find_element(*MainMenuVisibleItemsLocators.HOME_DECOR)
+        y = 50
+        d = 40
+        match menu_item:
+            case "All Home Decor":
+                ActionChains(self.driver).move_to_element(parent_elem).move_by_offset(0, y).click().perform()
+            case "Decorative Accessories":
+                ActionChains(self.driver).move_to_element(parent_elem).move_by_offset(0, y + d).click().perform()
+            case "Frames And Mirrors":
+                ActionChains(self.driver).move_to_element(parent_elem).move_by_offset(0, y + 2 * d).click().perform()
+            case "Soft Furnishings":
+                ActionChains(self.driver).move_to_element(parent_elem).move_by_offset(0, y + 3 * d).click().perform()
+            case "Flower Shop":
+                ActionChains(self.driver).move_to_element(parent_elem).move_by_offset(0, y + 4 * d).click().perform()
+            case "Candles And Lighting":
+                ActionChains(self.driver).move_to_element(parent_elem).move_by_offset(0, y + 5 * d).click().perform()
+            case "Furniture":
+                ActionChains(self.driver).move_to_element(parent_elem).move_by_offset(0, y + 6 * d).click().perform()
+            case "Vases":
+                ActionChains(self.driver).move_to_element(parent_elem).move_by_offset(0, y + 7 * d).click().perform()
+            case _:
+                raise RuntimeError("No such 'Main Menu' 'Home Decor' drop down items item")
