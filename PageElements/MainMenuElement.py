@@ -60,3 +60,34 @@ class MainMenu:
                 ActionChains(self.driver).move_to_element(parent_elem).move_by_offset(0, y + 9 * d).click().perform()
             case _:
                 raise RuntimeError("No such 'Main Menu' 'Portmeirion' drop down items item")
+
+    def click_to_main_menu_kitchen_and_dining_drop_down_items(self, menu_item: str) -> None:
+        """Method to click to 'Main Menu' 'Kitchen And Dining' drop down items"""
+        parent_elem = self.driver.find_element(*MainMenuVisibleItemsLocators.KITCHEN_AND_DINING)
+        y = 50
+        d = 40
+        match menu_item:
+            case "All Kitchen And Dining":
+                ActionChains(self.driver).move_to_element(parent_elem).move_by_offset(0, y).click().perform()
+            case "Mugs And Cups":
+                ActionChains(self.driver).move_to_element(parent_elem).move_by_offset(0, y + d).click().perform()
+            case "Kitchen Textiles":
+                ActionChains(self.driver).move_to_element(parent_elem).move_by_offset(0, y + 2 * d).click().perform()
+            case "Storage And Accessories":
+                ActionChains(self.driver).move_to_element(parent_elem).move_by_offset(0, y + 3 * d).click().perform()
+            case "Cooking And Roasting":
+                ActionChains(self.driver).move_to_element(parent_elem).move_by_offset(0, y + 4 * d).click().perform()
+            case "Cutlery":
+                ActionChains(self.driver).move_to_element(parent_elem).move_by_offset(0, y + 5 * d).click().perform()
+            case "Glassware":
+                ActionChains(self.driver).move_to_element(parent_elem).move_by_offset(0, y + 6 * d).click().perform()
+            case "Serving Pieces":
+                ActionChains(self.driver).move_to_element(parent_elem).move_by_offset(0, y + 7 * d).click().perform()
+            case "Tableware":
+                ActionChains(self.driver).move_to_element(parent_elem).move_by_offset(0, y + 8 * d).click().perform()
+            case "Candles And Lighting":
+                ActionChains(self.driver).move_to_element(parent_elem).move_by_offset(0, y + 9 * d).click().perform()
+            case "Table Linen And Accessories":
+                ActionChains(self.driver).move_to_element(parent_elem).move_by_offset(0, y + 10 * d).click().perform()
+            case _:
+                raise RuntimeError("No such 'Main Menu' 'Kitchen And Dining' drop down items item")

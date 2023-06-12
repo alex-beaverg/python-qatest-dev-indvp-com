@@ -18,12 +18,14 @@ Run all tests:
 Run all tests with markers:
     pytest -m guest_tests
     pytest -m main_menu_visible_items_tests
+    pytest -m main_menu_portmeirion_drop_down_items_tests
+    pytest -m main_menu_kitchen_and_dining_drop_down_items_tests
 
 Run all tests with allure reporting:
     pytest --alluredir test-allure-reports
 Show allure report:
     allure serve test-allure-reports
 
-Run ----Page Tests:
+Run tests in file:
     pytest test_HomePage.py
 

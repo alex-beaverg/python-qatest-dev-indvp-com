@@ -11,3 +11,5 @@
 9. Custom markers' container
 10. Requirements
 11. Locators' container
+12. ActionChains
+13. Screenshots for failed tests

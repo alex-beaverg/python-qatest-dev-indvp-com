@@ -18,7 +18,7 @@ class BasePage:
         """Method to open page"""
         self.driver.get(self.url)
 
-    def has_opened(self, title: str, timeout=5) -> bool:
+    def has_opened(self, title: str, timeout=10) -> bool:
         """Method to check opened page (title page check)"""
         try:
             WebDriverWait(self.driver, timeout).until(EC.title_is(title))
