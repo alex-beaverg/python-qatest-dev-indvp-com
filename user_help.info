@@ -21,6 +21,9 @@ Run all tests with markers:
     pytest -m main_menu_portmeirion_drop_down_items_tests
     pytest -m main_menu_kitchen_and_dining_drop_down_items_tests
     pytest -m main_menu_home_decor_drop_down_items_tests
+    pytest -m main_menu_bed_and_bath_drop_down_items_tests
+    pytest -m main_menu_garden_and_outdoor_drop_down_items_tests
+    pytest -m main_menu_gifts_drop_down_items_tests
 
 Run all tests with allure reporting:
     pytest --alluredir test-allure-reports
@@ -32,4 +35,11 @@ Rerun failed tests:
 
 Run tests in file:
     pytest test_HomePage.py
+
+======================================================================
+Run all tests:
+    pytest --browser=chrome --alluredir test-allure-reports --reruns 1
+Show allure report:
+    allure serve test-allure-reports
+======================================================================
 

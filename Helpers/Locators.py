@@ -1,6 +1,11 @@
 from selenium.webdriver.common.by import By
 
 
+class BasePageLocators:
+    """Class-container for 'Base' page locators"""
+    ERROR_404 = (By.XPATH, "//h1[text()='404']")
+
+
 class MainMenuVisibleItemsLocators:
     """Class-container for 'Main Menu' visible items locators"""
     NEW_IN = (By.CSS_SELECTOR, ".MenuOverlay-ItemList_type_main li:nth-child(1)")
